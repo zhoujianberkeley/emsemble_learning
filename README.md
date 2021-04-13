@@ -11,7 +11,7 @@ variance
   - why? Var(emsemble model) = 1/N Var(meta models)
   - assume we are emsembling by mean
     
-但是上述公式成立的条件是 1 emsemble by mean 2 mega models are indepedents
+但是上述公式成立的条件是 1 emsemble by mean 2 mega models are indepedent
 
 在实际操作中，所有的模型都是condition on training data的，那怎么做才能增加model
 independence呢？
