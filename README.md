@@ -30,6 +30,9 @@ bootstrap是行采样，还有列采样，列采样是随机抽取feature，然�
 列采样可以使得模型间的相关性更小，从而降低了ensemble model的方差。
 
 列采样的关键参数是抽取多少列feature呢？
-根据Breiman (2001) （Breiman是随机森林的发明者）， classification tree应当抽取 $\sqrt{k}$, k是特征数量 
-而regression tree可以抽取 k/3，因为"the corelation amongs regression trees increase much slower 
+ 
+根据Breiman (2001) （Breiman是随机森林的发明者), classification tree应当抽取 square root of k, k是特征数量 
+而regression tree可以抽取 k/3，因为"the correlation amongst regression trees increase much slower 
 with features, compared to classification trees."
+
+
