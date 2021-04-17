@@ -4,7 +4,7 @@
 
 ### voting and bagging
 
-### 为什么voting/bagging能让模型表现更好呢？
+### 为什么voting能让模型表现更好呢？
 - model performance depends on bias and variance
 - voting won't deteriorate nor improve model bias but it helps reduce 
 variance 
@@ -13,6 +13,8 @@ variance
     
 但是上述公式成立的条件是 1 emsemble by mean 2 mega models are indepedent
 
+## task-8 17th Apr. 打卡
+### 为什么bagging能让模型表现更好呢？
 在实际操作中，所有的模型都是condition on training data的，那怎么做才能增加model
 independence呢？
 - bagging! 
@@ -22,3 +24,11 @@ independence呢？
 
 所以 rho 越小，模型的方差越小，因此为了减少模型方差，使用了bagging,让每一个meta model
 所对应的训练数据是不一样的，因而降低了模型间的相关性。
+
+### 采样参数
+bootstrap是行采样，还有列采样，列采样是随机抽取feature，然后基于抽取的feature进行训练。
+列采样可以使得模型间的相关性更小，从而降低了ensemble model的方差。
+
+列采样的关键参数是抽取多少列feature呢？
+根据Brieman (2001) （Brieman是随机森林的发明者）， clasififcation tree应当收入 $\alpha$\sqrt(tree) 
+而regression tree可以抽取多一点，
