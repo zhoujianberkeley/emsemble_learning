@@ -35,4 +35,5 @@ bootstrap是行采样，还有列采样，列采样是随机抽取feature，然�
 而regression tree可以抽取 k/3，因为"the correlation amongst regression trees increase much slower 
 with features, compared to classification trees."
 
+## task-9 21st Apr. 打卡
 
