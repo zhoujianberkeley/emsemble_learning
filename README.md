@@ -36,4 +36,37 @@ bootstrap是行采样，还有列采样，列采样是随机抽取feature，然�
 with features, compared to classification trees."
 
 ## task-9 21st Apr. 打卡
+Adaptative boosting中很有意思的一点是：为什么weaker learner的权重是 0.5 ln(1-error rate)/error rate
+
+这个权重是基于最小化exponential loss的F.O.C推导而出的。
+
+设定Y的range是{-1, 1}
+
+Supposed we have a boosted classifier with m weak classifiers, denoted Cm
+![img.png](img.png)
+The exponental loss of adding one more weak classifier is 
+![img_1.png](img_1.png)
+
+First order condition is 
+![img_2.png](img_2.png)
+
+Sovle the F.O.C, we get 
+![img_3.png](img_3.png)
+
+Finaly, define error rate to be 
+![img_4.png](img_4.png)
+
+
+所以，其实error rate的定义和每个week learner的权重都是通过最优化loss function得到的。
+
+至于为什么在添加下一颗树的时候，需要用上文推到的model权重再来调整每个observation的权重，
+
+
+
+
+
+
+
+
+
 
