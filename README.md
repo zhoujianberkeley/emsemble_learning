@@ -59,9 +59,17 @@ Finaly, define error rate to be
 
 所以，其实error rate的定义和每个week learner的权重都是通过最优化loss function得到的。
 
-至于为什么在添加下一颗树的时候，需要用上文推到的model权重再来调整每个observation的权重，
+至于为什么在新添加一颗树后，需要用上文推到的model权重再来调整每个observation的权重，
+其实这只是在计算添了一棵树之后的新模型的exponential loss，推导如下：
+
+![img_5.png](img_5.png)
 
 
+所以其实Adaptive Boosting就是 -> 按照最小化exponential loss添加新的树 -> 
+计算添加了一棵树后的新模型的exponential loss(表现为调整observation的权重) -> 
+新一轮的添加树。
+
+所以一旦loss function改变了——比如用了pseudo huber loss,那么权重调整的参数都会相应调整。
 
 
 
